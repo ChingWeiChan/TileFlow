@@ -29,10 +29,10 @@ problem:
     ins: A, B
     out: C
     
-  - name: GEMM2 
+  - name: GEMM2
     dimensions: [M,L,N]
     data-spaces:
-    - name: E 
+    - name: E
       projection: 
         - [[M]]
         - [[N]]
