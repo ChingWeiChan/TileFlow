@@ -6,7 +6,7 @@ mapping:
 
   subtree: 
   - node-type: Scope 
-    type: Sequential 
+    type: Sequential
 
     subtree:
     - node-type: Tile 
