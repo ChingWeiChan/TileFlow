@@ -1,0 +1,76 @@
+check:
+  mem: False
+verbose: 1
+mapping:
+  node-type: Tile 
+  factors: M=1 L=1
+  type: temporal
+  target: MainMemory
+  subtree:
+    - node-type: Tile 
+      type: temporal 
+      factors: M=1 L=1
+      target: GlobalBuffer
+      subtree:
+      - node-type: Tile 
+        type: spatial
+        factors: M=1 L=1
+        permutation: ML
+        target: GlobalBuffer
+        subtree:
+        - node-type: Tile 
+          type: temporal  
+          factors: M=1 L=1024
+          permutation: ML
+          target: RegFile
+          subtree:
+          - node-type: Op
+            name: softmax_row_1
+            device_binding: softmaxUnit
+          
+              # - node-type: Tile 
+              #   type: spatial
+              #   factors: M=1 L=1
+              #   permutation: ML
+              #   target: GlobalBuffer
+              #   subtree:
+              #   - node-type: Tile 
+              #     type: temporal  
+              #     factors: M=1 L=256
+              #     permutation: ML
+              #     target: RegFile
+              #     subtree:
+              #     - node-type: Op
+              #       name: Div_1
+              #       device_binding: softmaxUnit
+
+          # - node-type: Scope
+          #   type: sequential
+          #   subtree:
+        # - node-type: Tile 
+        #   type: spatial
+        #   factors: P=1 Q=1
+        #   target: GlobalBuffer
+        #   subtree:
+        #   - node-type: Tile 
+        #     type: temporal  
+        #     factors: P=1 Q=2048
+        #     target: RegFile
+        #     subtree:
+        #     - node-type: Op
+        #       name: softmax_row_2
+        #       device_binding: softmaxUnit
+          
+              # - node-type: Tile 
+              #   type: spatial
+              #   factors: P=1 Q=1
+              #   target: GlobalBuffer
+              #   subtree:
+              #   - node-type: Tile 
+              #     type: temporal  
+              #     factors: P=1 Q=256
+              #     target: RegFile
+              #     subtree:
+              #     - node-type: Op
+              #       name: Div_2
+              #       device_binding: softmaxUnit

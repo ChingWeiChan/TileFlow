@@ -1,0 +1,55 @@
+problem:
+  io:
+    ins: A, #B,E
+    outs: B #C,F
+  dimensions: [M,L]
+  instance:
+    M: 1
+    L: 1024
+  ops:
+  - name: softmax_row_1
+    dimensions: [M,L] 
+    data-spaces:
+    - name: B
+      projection:
+        - [[M]] 
+        - [[L]] 
+      read-write: True 
+    - name: A
+      projection:
+        - [[M]]
+        - [[L]]
+    ins: A
+    out: B
+
+  # - name: Div_1
+  #   dimensions: [M,L] 
+  #   data-spaces:
+  #   - name: C
+  #     projection:
+  #       - [[M]]
+  #       - [[L]]
+  #     read-write: True 
+  #   - name: B
+  #     projection:
+  #       - [[M]]
+  #       - [[L]]
+  #   ins: B
+  #   out: C
+
+
+  # - name: Div_2
+  #   dimensions: [P,Q] 
+  #   data-spaces:
+  #   - name: F
+  #     projection:
+  #       - [[P]] 
+  #       - [[Q]] 
+  #     read-write: True 
+  #   - name: E
+  #     projection:
+  #       - [[P]]
+  #       - [[Q]]
+  #   ins: E
+  #   out: F
+  

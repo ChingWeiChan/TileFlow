@@ -1,0 +1,71 @@
+problem:
+  io:
+    ins: A, B, D, F
+    outs: G
+  dimensions: [M,N,K,L,Q]
+  instance:
+    M: 512
+    N: 64
+    L: 512
+    K: 64
+    Q: 32
+
+  ops:
+  - name: GEMM1
+    dimensions: [M,L,K] 
+    data-spaces:
+    - name: C 
+      projection:
+        - [[M]] 
+        - [[L]] 
+      read-write: True 
+    - name: A 
+      projection:
+        - [[M]]
+        - [[K]]
+    - name: B
+      projection:
+        - [[K]]
+        - [[L]]
+    ins: A, B
+    out: C
+    
+  - name: GEMM2 
+    dimensions: [M,L,N]
+    data-spaces:
+    - name: E 
+      projection: 
+        - [[M]]
+        - [[N]]
+      read-write: True 
+    - name: C
+      projection: 
+        - [[M]]
+        - [[L]]
+    - name: D 
+      projection: 
+        - [[L]]
+        - [[N]]
+    ins: C, D
+    out: E
+      
+  - name: GEMM3
+    dimensions: [M,N,Q]
+    data-spaces:
+    - name: G
+      projection: 
+        - [[M]]
+        - [[Q]]
+      read-write: True 
+    - name: E
+      projection: 
+        - [[M]]
+        - [[N]]
+    - name: F 
+      projection: 
+        - [[N]]
+        - [[Q]]
+    ins: E, F
+    out: G
+
+verbose: 1

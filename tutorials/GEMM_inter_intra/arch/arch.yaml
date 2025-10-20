@@ -1,0 +1,46 @@
+architecture: 
+  version: 0.2 
+
+  subtree:
+  - name: System
+    
+    local: 
+    - name: MainMemory
+      class: DRAM 
+      attributes:
+        sizeKB: 104857600
+        word-bits: 16
+        read_bandwidth: 200
+        write_bandwidth: 200
+      
+    subtree: 
+    - name: GlobalBuffer 
+      local:  
+      - name: GlobalBuffer
+        class: SRAM
+        attributes:
+          word-bits: 16
+          sizeKB: 1638400
+          read_bandwidth: 300
+          write_bandwidth: 300
+
+
+      subtree:
+      - name: macPE
+        local: 
+        - name: RegFile[0..255] 
+          class: regfile
+          attributes:
+            meshX: 256
+            block_size: 300
+            depth: 64
+            word-bits: 16
+            depth: 256
+            read_bandwidth: 500
+            write_bandwidth: 500
+
+        - name: mac[0..255]
+          class: intmac 
+          attributes: 
+            word-bits: 16
+            meshX: 256

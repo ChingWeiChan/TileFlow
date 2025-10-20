@@ -20,4 +20,5 @@ if not GetOption('clang'):
 
 env.Append(TIMELOOP_BASE_DIR = Dir('./3rdparty/timeloop/').abspath)
 env.Append(BUILD_BASE_DIR = Dir('.').abspath)
+env.Append(CXXFLAGS=['-Wno-overloaded-virtual'])
 env.SConscript('build/SConscript', exports='env')

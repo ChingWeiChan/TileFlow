@@ -1,0 +1,57 @@
+mapping:
+  node-type: Tile 
+  type: temporal 
+  factors: M=X L=X K=X N=X P=X Q=X W=X Z=X Y=X
+  target: MainMemory
+  subtree:
+  - node-type: Tile 
+    type: temporal 
+    factors: M=X L=X K=X N=X P=X Q=X W=X Z=X Y=X
+    target: GlobalBuffer
+    subtree:
+    - node-type: Scope 
+      type: pipeline
+      subtree:
+      - node-type: Tile 
+        type: spatial
+        factors: M=8 L=8 W=1
+        target: GlobalBuffer
+        subtree: 
+        - node-type: Tile
+          type: temporal
+          factors: M=X L=X W=X
+          target: RegFile
+          subtree:
+          - node-type: Op
+            name: GEMM1
+
+      
+      - node-type: Tile
+        type: spatial
+        factors: K=8 N=8 Z=1
+        target: GlobalBuffer
+        subtree: 
+        - node-type: Tile 
+          type: temporal  
+          factors: K=X N=X Z=X
+          target: RegFile
+          subtree:
+          - node-type: Op
+            name: GEMM2
+
+  
+      - node-type: Tile 
+        type: spatial
+        factors: P=8 Q=8 Y=1
+        target: GlobalBuffer
+        subtree:
+        - node-type: Tile 
+          type: temporal  
+          factors: P=X Q=X Y=X
+          target: RegFile
+          subtree:
+          - node-type: Op
+            name: GEMM3
+
+output: GEMM_pipeline
+verbose: 1

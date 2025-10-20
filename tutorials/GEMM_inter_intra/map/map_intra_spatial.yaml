@@ -1,0 +1,79 @@
+mapping:
+  node-type: Scope 
+  type: Sequential
+  subtree:
+  - node-type: Tile 
+    type: temporal 
+    factors: M=X L=X W=X
+    target: MainMemory
+    subtree: 
+    - node-type: Tile 
+      type: temporal 
+      factors: M=X L=X W=X
+      target: GlobalBuffer
+      subtree:
+      - node-type: Tile 
+        type: spatial
+        factors: M=16 L=16 W=X
+        target: GlobalBuffer
+        subtree: 
+        - node-type: Tile 
+          type: temporal  
+          factors: M=X L=X W=X
+          target: RegFile
+          subtree:
+          - node-type: Op
+            name: GEMM1
+
+
+  - node-type: Tile 
+    type: temporal 
+    factors: K=X N=X Z=X
+    target: MainMemory
+    subtree: 
+    - node-type: Tile 
+      type: temporal 
+      factors: K=X N=X Z=X
+      target: GlobalBuffer
+      subtree:
+      - node-type: Tile 
+        type: spatial
+        factors: K=16 N=16 Z=X
+        target: GlobalBuffer
+        subtree: 
+        - node-type: Tile 
+          type: temporal  
+          factors: K=X N=X Z=X
+          target: RegFile
+          subtree:
+          - node-type: Op
+            name: GEMM2
+
+  - node-type: Tile 
+    type: temporal 
+    factors: P=X Q=X Y=X
+    target: MainMemory
+    subtree: 
+    - node-type: Tile 
+      type: temporal 
+      factors: P=X Q=X Y=X
+      target: GlobalBuffer
+      subtree:
+      - node-type: Tile 
+        type: spatial
+        factors: P=16 Q=16 Y=X
+        target: GlobalBuffer
+        subtree:
+        - node-type: Tile 
+          type: temporal  
+          factors: P=X Q=X Y=X
+          target: RegFile
+          subtree:
+          - node-type: Op
+            name: GEMM3
+
+
+
+
+output: GEMM_spatial
+verbose: 1

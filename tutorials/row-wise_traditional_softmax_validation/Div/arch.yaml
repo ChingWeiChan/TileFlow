@@ -1,0 +1,45 @@
+architecture: 
+  version: 0.2 
+
+  subtree:
+  - name: System
+    
+    local: 
+    - name: MainMemory
+      class: DRAM
+      attributes:
+        block-size: 30000
+        depth: 256
+        word-bits: 4
+        write_bandwidth: 200
+
+
+    subtree: 
+    - name: GlobalBuffer
+      local:
+      - name: GlobalBuffer
+        class: SRAM
+        attributes:
+          word-bits: 8
+          block-size: 256
+          depth: 1
+          # capacity = depth x block-size x word-bits 
+          write_bandwidth: 300
+
+      subtree:
+      - name : SoftmaxUnit
+        local:
+          - name: RegFile[0..127]
+            class: regfile
+            attributes:
+              meshX: 256
+              depth: 10
+              block-size: 80
+              word-bits: 16
+              read_bandwidth: 400
+              write_bandwidth: 400
+
+          - name: DivUnit[0..127]
+            class: compute
+            attributes:
+              word-bits: 16

@@ -1,0 +1,23 @@
+mapping:
+  node-type: Tile 
+  type: temporal 
+  factors: M=64 L=16
+  target: MainMemory
+
+  subtree: 
+  - node-type: Tile 
+    type: temporal 
+    factors: M=4 L=1
+    permutation: ML
+    target: GlobalBuffer
+    subtree: 
+    - node-type: Tile
+      type: temporal
+      factors: M=4 L=16
+      permutation: ML
+      target: RegFile
+      
+      subtree:
+      - node-type: Op
+        name: SubExpSum
+          

@@ -1,0 +1,28 @@
+mapping:
+  node-type: Tile
+  factors: M=64 L=1
+  type: temporal 
+  target: MainMemory
+  subtree: 
+  - node-type: Tile 
+    type: temporal 
+    factors: M=2 L=2
+    permutation: ML
+    target: GlobalBuffer
+    subtree:
+    - node-type: Tile
+      type: spatial
+      factors: M=4 L=64
+      permutation: ML
+      target: GlobalBuffer
+      subtree:
+      - node-type: Tile
+        type: temporal
+        factors: M=2 L=2
+        permutation: ML
+        target: RegFile
+        
+        subtree:
+        - node-type: Op
+          name: MaxExpMulAdd
+          

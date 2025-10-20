@@ -1,0 +1,26 @@
+problem:
+  io:
+    ins: A
+    outs: B
+  dimensions: [M,L]
+  instance:
+    M: 1024
+    L: 256
+  ops:
+  - name: MaxExpMulAdd
+    dimensions: [M,L] 
+    data-spaces:
+    - name: B
+      projection:
+        - [[M]] 
+        - [[L]] 
+      read-write: True 
+    - name: A
+      projection:
+        - [[M]]
+        - [[L]]
+    ins: A
+    out: B
+check:
+  mem: False
+verbose: 1

@@ -1,0 +1,23 @@
+mapping:
+  node-type: Tile 
+  factors: M=8 L=16
+  type: temporal
+  permutation: ML
+  target: MainMemory
+  subtree:
+    - node-type: Tile 
+      type: temporal 
+      factors: M=128 L=1
+      permutation: ML
+      target: GlobalBuffer
+      subtree:
+      - node-type: Tile 
+        type: temporal  
+        factors: M=1 L=16
+        permutation: ML
+        target: RegFile
+        
+        subtree:
+        - node-type: Op
+          name: Div
+          device_binding: softmaxUnit
