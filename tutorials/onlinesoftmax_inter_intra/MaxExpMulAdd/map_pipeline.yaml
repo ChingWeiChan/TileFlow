@@ -1,0 +1,32 @@
+mapping:
+  node-type: Tile 
+  type: temporal 
+  factors: M=1 L=2
+  target: MainMemory
+  subtree: 
+  - node-type: Tile 
+    type: temporal 
+    factors: M=1 L=8
+    permutation: ML
+    target: GlobalBuffer
+    subtree:
+    - node-type: Tile 
+      type: spatial
+      factors: M=8 L=8
+      permutation: ML
+      target: GlobalBuffer
+      subtree: 
+      - node-type: Tile 
+        type: temporal  
+        factors: M=32 L=4
+        permutation: ML
+        target: RegFile
+
+        subtree:
+        - node-type: Op
+          name: MaxExpMulAdd_1
+  
+
+output: onlinesoftmax_maxexpmuladd_pipeline
+verbose: 1
+        

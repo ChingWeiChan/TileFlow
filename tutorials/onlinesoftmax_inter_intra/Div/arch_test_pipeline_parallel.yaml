@@ -11,7 +11,7 @@ architecture:
         block-size: 30000
         depth: 256000
         word-bits: 16
-        read_bandwidth: 120
+        read_bandwidth: 25
 
 
     subtree: 
@@ -23,10 +23,10 @@ architecture:
           word-bits: 16
           block-size: 30000
           depth: 128000
-          read_bandwidth: 164
-          write_bandwidth: 164
+          read_bandwidth: 35
+          write_bandwidth: 35
       subtree:
-      - name : MaxExpMulAddUnit
+      - name : DivUnit
         local:
           - name: RegFile[0..255]
             class: regfile
@@ -35,9 +35,9 @@ architecture:
               depth: 640000
               block-size: 30000
               word-bits: 16
-              read_bandwidth: 400
-              write_bandwidth: 400
-          - name: MaxExpMulAddUnit[0..255]
+              read_bandwidth: 100
+              write_bandwidth: 100
+          - name: DivUnit[0..255]
             class: compute
             attributes:
               word-bits: 16

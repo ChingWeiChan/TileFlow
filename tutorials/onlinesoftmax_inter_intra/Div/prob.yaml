@@ -1,26 +1,73 @@
 problem:
   io:
-    ins: A
-    outs: B
+    ins: B,F,I,P
+    outs: C,G,J,Q
   dimensions: [M,L]
   instance:
-    M: 1024
-    L: 256
+    M: 256
+    L: 512
   ops:
-  - name: Div
+  
+  - name: Div_1
     dimensions: [M,L] 
     data-spaces:
-    - name: B
+    - name: C
       projection:
         - [[M]] 
         - [[L]] 
       read-write: True 
-    - name: A
+    - name: B
       projection:
         - [[M]]
         - [[L]]
-    ins: A
-    out: B
-check:
-  mem: False
-verbose: 1
+    ins: B
+    out: C
+
+
+  - name: Div_2
+    dimensions: [M,L] 
+    data-spaces:
+    - name: G
+      projection:
+        - [[M]] 
+        - [[L]] 
+      read-write: True 
+    - name: F
+      projection:
+        - [[M]]
+        - [[L]]
+    ins: F
+    out: G
+
+  - name: Div_3
+    dimensions: [M,L] 
+    data-spaces:
+    - name: J
+      projection:
+        - [[M]] 
+        - [[L]] 
+      read-write: True 
+    - name: I
+      projection:
+        - [[M]]
+        - [[L]]
+    ins: I
+    out: J
+  
+
+  - name: Div_4
+    dimensions: [M,L] 
+    data-spaces:
+    - name: Q
+      projection:
+        - [[M]] 
+        - [[L]] 
+      read-write: True 
+    - name: P
+      projection:
+        - [[M]]
+        - [[L]]
+    ins: P
+    out: Q
+ 
+  

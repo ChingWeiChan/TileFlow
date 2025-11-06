@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
   auto root = config->getRoot();
   std::string filename;
   root.lookupValue("output", filename);
-  std::ofstream log_file("../result/LOG_" + filename + ".txt");
+  std::ofstream log_file("../result/onlinesoftmax/LOG_" + filename + ".txt");
   std::streambuf *cerr_backup = std::cerr.rdbuf();
   std::cerr.rdbuf(log_file.rdbuf());
 

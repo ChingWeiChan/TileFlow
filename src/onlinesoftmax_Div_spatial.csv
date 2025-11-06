@@ -1,0 +1,145 @@
+metric,value
+Cycle,9592
+Energy,1.15915e+15
+MainMemory::Write::P, 0
+MainMemory::Read::P, 131072
+MainMemory::Write::Q, 131072
+MainMemory::Fill::Q, 0
+MainMemory::Read::Q, 131072
+MainMemory::Fill::I, 0
+MainMemory::Update, 524288
+MainMemory::Update::P, 0
+MainMemory::Read::I, 131072
+MainMemory::Read, 1.04858e+06
+MainMemory::Fill, 0
+MainMemory::Fill::F, 0
+MainMemory::Update::C, 131072
+MainMemory::Update::B, 0
+MainMemory::Read::C, 131072
+MainMemory::CapUtil, 3.41333e-05
+MainMemory::Write, 524288
+MainMemory::Update::J, 131072
+MainMemory::Update::G, 131072
+MainMemory::SpatialUtil, 1
+MainMemory::Write::C, 131072
+MainMemory::SlowDown, 1
+MainMemory::Write::J, 131072
+MainMemory::Accesses, 1.57286e+06
+MainMemory::Write::G, 131072
+MainMemory::Write::I, 0
+MainMemory::Fill::C, 0
+MainMemory::Fill::G, 0
+MainMemory::Energy, 3.6e+08
+MainMemory::Update::I, 0
+MainMemory::Write::B, 0
+MainMemory::Read::B, 131072
+MainMemory::Update::Q, 131072
+MainMemory::Fill::B, 0
+MainMemory::Read::G, 131072
+MainMemory::Read::F, 131072
+MainMemory::Write::F, 0
+MainMemory::Fill::P, 0
+MainMemory::Fill::J, 0
+MainMemory::Update::F, 0
+MainMemory::Read::J, 131072
+GlobalBuffer::Write::P, 131072
+GlobalBuffer::Read::P, 131072
+GlobalBuffer::Write::Q, 262144
+GlobalBuffer::Fill::Q, 131072
+GlobalBuffer::Read::Q, 131072
+GlobalBuffer::Fill::I, 131072
+GlobalBuffer::Update, 524288
+GlobalBuffer::Update::P, 0
+GlobalBuffer::Read::I, 131072
+GlobalBuffer::Read, 1.04858e+06
+GlobalBuffer::Fill, 1.04858e+06
+GlobalBuffer::Fill::F, 131072
+GlobalBuffer::Update::C, 131072
+GlobalBuffer::Update::B, 0
+GlobalBuffer::Read::C, 131072
+GlobalBuffer::CapUtil, 3.41333e-05
+GlobalBuffer::Write, 1.57286e+06
+GlobalBuffer::Update::J, 131072
+GlobalBuffer::Update::G, 131072
+GlobalBuffer::SpatialUtil, 1
+GlobalBuffer::Write::C, 262144
+GlobalBuffer::SlowDown, 4.68359
+GlobalBuffer::Write::J, 262144
+GlobalBuffer::Accesses, 2.62144e+06
+GlobalBuffer::Write::G, 262144
+GlobalBuffer::Write::I, 131072
+GlobalBuffer::Fill::C, 131072
+GlobalBuffer::Fill::G, 131072
+GlobalBuffer::Energy, 1.35679e+12
+GlobalBuffer::Update::I, 0
+GlobalBuffer::Write::B, 131072
+GlobalBuffer::Read::B, 131072
+GlobalBuffer::Update::Q, 131072
+GlobalBuffer::Fill::B, 131072
+GlobalBuffer::Read::G, 131072
+GlobalBuffer::Read::F, 131072
+GlobalBuffer::Write::F, 131072
+GlobalBuffer::Fill::P, 131072
+GlobalBuffer::Fill::J, 131072
+GlobalBuffer::Update::F, 0
+GlobalBuffer::Read::J, 131072
+RegFile::Write::P, 512
+RegFile::Read::P, 512
+RegFile::Write::Q, 1024
+RegFile::Fill::Q, 512
+RegFile::Read::Q, 512
+RegFile::Fill::I, 512
+RegFile::Update, 2048
+RegFile::Update::P, 0
+RegFile::Read::I, 512
+RegFile::Read, 4096
+RegFile::Fill, 4096
+RegFile::Fill::F, 512
+RegFile::Update::C, 512
+RegFile::Update::B, 0
+RegFile::Read::C, 512
+RegFile::CapUtil, 3.33333e-09
+RegFile::Write, 6144
+RegFile::Update::J, 512
+RegFile::Update::G, 512
+RegFile::SpatialUtil, 1
+RegFile::Write::C, 1024
+RegFile::SlowDown, 1
+RegFile::Write::J, 1024
+RegFile::Accesses, 2.62144e+06
+RegFile::Write::G, 1024
+RegFile::Write::I, 512
+RegFile::Fill::C, 512
+RegFile::Fill::G, 512
+RegFile::Energy, 1.15779e+15
+RegFile::Update::I, 0
+RegFile::Write::B, 512
+RegFile::Read::B, 512
+RegFile::Update::Q, 512
+RegFile::Fill::B, 512
+RegFile::Read::G, 512
+RegFile::Read::F, 512
+RegFile::Write::F, 512
+RegFile::Fill::P, 512
+RegFile::Fill::J, 512
+RegFile::Update::F, 0
+RegFile::Read::J, 512
+div::Energy, 524288
+div::Flops, 524288
+MEM::RegFile,3.33333e-09
+MEM::GlobalBuffer,3.41333e-05
+MEM::MainMemory,3.41333e-05
+MEM::RegFile,3.33333e-09
+MEM::GlobalBuffer,3.41333e-05
+MEM::MainMemory,3.41333e-05
+MEM::RegFile,3.33333e-09
+MEM::GlobalBuffer,3.41333e-05
+MEM::MainMemory,3.41333e-05
+MEM::RegFile,3.33333e-09
+MEM::GlobalBuffer,3.41333e-05
+MEM::MainMemory,3.41333e-05
+SPATIAL::GlobalBuffer,1
+SPATIAL::GlobalBuffer,1
+SPATIAL::GlobalBuffer,1
+SPATIAL::GlobalBuffer,1
+SPATIAL::MainMemory,1

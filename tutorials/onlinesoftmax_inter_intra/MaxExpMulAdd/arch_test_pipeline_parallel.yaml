@@ -11,7 +11,7 @@ architecture:
         block-size: 30000
         depth: 256000
         word-bits: 16
-        read_bandwidth: 120
+        read_bandwidth: 30
 
 
     subtree: 
@@ -23,8 +23,8 @@ architecture:
           word-bits: 16
           block-size: 30000
           depth: 128000
-          read_bandwidth: 164
-          write_bandwidth: 164
+          read_bandwidth: 45
+          write_bandwidth: 45
       subtree:
       - name : MaxExpMulAddUnit
         local:
@@ -35,8 +35,8 @@ architecture:
               depth: 640000
               block-size: 30000
               word-bits: 16
-              read_bandwidth: 400
-              write_bandwidth: 400
+              read_bandwidth: 100
+              write_bandwidth: 100
           - name: MaxExpMulAddUnit[0..255]
             class: compute
             attributes:

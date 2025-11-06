@@ -1,0 +1,92 @@
+mapping:
+  node-type: Scope 
+  type: Sequential
+  subtree:
+  - node-type: Tile 
+    type: temporal 
+    factors: M=X L=X
+    target: MainMemory
+    subtree: 
+    - node-type: Tile 
+      type: temporal 
+      factors: M=X L=X
+      permutation: ML
+      target: GlobalBuffer
+      subtree: 
+      - node-type: Tile 
+        type: temporal  
+        factors: M=X L=X
+        permutation: ML
+        target: RegFile
+
+        subtree:
+        - node-type: Op
+          name: Div_1
+
+
+  - node-type: Tile 
+    type: temporal 
+    factors: M=X L=X
+    target: MainMemory
+    subtree: 
+    - node-type: Tile 
+      type: temporal 
+      factors: M=X L=X
+      permutation: ML
+      target: GlobalBuffer
+      subtree: 
+      - node-type: Tile 
+        type: temporal  
+        factors: M=X L=X
+        permutation: ML
+        target: RegFile
+
+        subtree:
+        - node-type: Op
+          name: Div_2
+
+  - node-type: Tile 
+    type: temporal 
+    factors: M=X L=X
+    target: MainMemory
+    subtree: 
+    - node-type: Tile 
+      type: temporal 
+      factors: M=X L=X
+      permutation: ML
+      target: GlobalBuffer
+      subtree: 
+      - node-type: Tile 
+        type: temporal  
+        factors: M=X L=X
+        permutation: ML
+        target: RegFile
+
+        subtree:
+        - node-type: Op
+          name: Div_3
+
+  - node-type: Tile 
+    type: temporal 
+    factors: M=X L=X
+    target: MainMemory
+    subtree: 
+    - node-type: Tile 
+      type: temporal 
+      factors: M=X L=X
+      permutation: ML
+      target: GlobalBuffer
+      subtree: 
+      - node-type: Tile 
+        type: temporal  
+        factors: M=X L=X
+        permutation: ML
+        target: RegFile
+
+        subtree:
+        - node-type: Op
+          name: Div_4
+
+
+output: onlinesoftmax_div_temporal
+verbose: 1

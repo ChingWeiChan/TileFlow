@@ -1,13 +1,13 @@
 problem:
   io:
-    ins: A
-    outs: B
+    ins: A,E,H,O
+    outs: B,F,I,P
   dimensions: [M,L]
   instance:
-    M: 1024
-    L: 256
+    M: 256
+    L: 512
   ops:
-  - name: MaxExpMulAdd
+  - name: MaxExpMulAdd_1
     dimensions: [M,L] 
     data-spaces:
     - name: B
@@ -21,6 +21,54 @@ problem:
         - [[L]]
     ins: A
     out: B
-check:
-  mem: False
-verbose: 1
+
+
+  - name: MaxExpMulAdd_2
+    dimensions: [M,L] 
+    data-spaces:
+    - name: F
+      projection:
+        - [[M]] 
+        - [[L]] 
+      read-write: True 
+    - name: E
+      projection:
+        - [[M]]
+        - [[L]]
+    ins: E
+    out: F
+  
+
+  - name: MaxExpMulAdd_3
+    dimensions: [M,L] 
+    data-spaces:
+    - name: I
+      projection:
+        - [[M]] 
+        - [[L]] 
+      read-write: True 
+    - name: H
+      projection:
+        - [[M]]
+        - [[L]]
+    ins: H
+    out: I
+  
+  
+  - name: MaxExpMulAdd_4
+    dimensions: [M,L] 
+    data-spaces:
+    - name: P
+      projection:
+        - [[M]] 
+        - [[L]] 
+      read-write: True 
+    - name: O
+      projection:
+        - [[M]]
+        - [[L]]
+    ins: O
+    out: P
+  
+
+ 

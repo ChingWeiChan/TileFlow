@@ -1,0 +1,116 @@
+mapping:
+  node-type: Scope 
+  type: Sequential
+  subtree:
+  - node-type: Tile 
+    type: temporal 
+    factors: M=1 L=2
+    target: MainMemory
+    subtree: 
+    - node-type: Tile 
+      type: temporal 
+      factors: M=1 L=8
+      permutation: ML
+      target: GlobalBuffer
+      subtree:
+      - node-type: Tile 
+        type: spatial
+        factors: M=16 L=16
+        permutation: ML
+        target: GlobalBuffer
+        subtree: 
+        - node-type: Tile 
+          type: temporal  
+          factors: M=16 L=2
+          permutation: ML
+          target: RegFile
+
+          subtree:
+          - node-type: Op
+            name: MaxExpMulAdd_1
+
+  - node-type: Tile 
+    type: temporal 
+    factors: M=1 L=2
+    target: MainMemory
+    subtree: 
+    - node-type: Tile 
+      type: temporal 
+      factors: M=1 L=8
+      permutation: ML
+      target: GlobalBuffer
+      subtree:
+      - node-type: Tile 
+        type: spatial
+        factors: M=16 L=16
+        permutation: ML
+        target: GlobalBuffer
+        subtree: 
+        - node-type: Tile 
+          type: temporal  
+          factors: M=16 L=2
+          permutation: ML
+          target: RegFile
+
+          subtree:
+          - node-type: Op
+            name: MaxExpMulAdd_2
+ 
+  - node-type: Tile 
+    type: temporal 
+    factors: M=1 L=2
+    target: MainMemory
+    subtree: 
+    - node-type: Tile 
+      type: temporal 
+      factors: M=1 L=8
+      permutation: ML
+      target: GlobalBuffer
+      subtree:
+      - node-type: Tile 
+        type: spatial
+        factors: M=16 L=16
+        permutation: ML
+        target: GlobalBuffer
+        subtree: 
+        - node-type: Tile 
+          type: temporal  
+          factors: M=16 L=2
+          permutation: ML
+          target: RegFile
+
+          subtree:
+          - node-type: Op
+            name: MaxExpMulAdd_3
+
+  - node-type: Tile
+    type: temporal 
+    factors: M=1 L=2
+    target: MainMemory
+    subtree: 
+    - node-type: Tile 
+      type: temporal 
+      factors: M=1 L=8
+      permutation: ML
+      target: GlobalBuffer
+      subtree:
+      - node-type: Tile 
+        type: spatial
+        factors: M=16 L=16
+        permutation: ML
+        target: GlobalBuffer
+        subtree: 
+        - node-type: Tile 
+          type: temporal  
+          factors: M=16 L=2
+          permutation: ML
+          target: RegFile
+
+          subtree:
+          - node-type: Op
+            name: MaxExpMulAdd_4
+
+
+
+output: onlinesoftmax_maxexpmuladd_spatial
+verbose: 1
